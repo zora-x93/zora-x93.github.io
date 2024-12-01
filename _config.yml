@@ -11,7 +11,7 @@ title:            Renzhi Xing
 tagline:          'Renzhi Xing'
 description:      'A blog of Renzhi Xing'
 url:              https://zora-x93.github.io
-baseurl:          /
+baseurl:          ""
 
 author:
   name:           'Renzhi Xing'

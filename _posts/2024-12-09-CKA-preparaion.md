@@ -131,6 +131,14 @@ Find examples in doc: Reference -> API Access Control -> Using RBAC Authorizatio
 You can easily find it by searching `RBAC`.
 (What I don't like about the K8s doc is that you can never summarize a pattern of how the docs are structured. Better to use keyword searching.)
 
+To test if a role works we can use `k auth can-i`
+
+## RBAC combinations
+1. Role + RoleBinding (in single namespace)
+2. ClusterRole + ClusterRoleBinding (cluster-wide)
+3. ClusterRole + Rolebinding (available cluster-wide but applied in single namespace)
+4. Role + ClusterRolebinding (Not possible)
+
 ## Create DaemonSet
 A tip is to use `k create deployment $do` then replace the `Deployment` kind with `DaemonSet`.
 
@@ -138,4 +146,18 @@ A tip is to use `k create deployment $do` then replace the `Deployment` kind wit
 Doc: Concepts -> Scheduling, Preemption and Eviction -> Assigning Pods to Nodes
 Search "Pods to Nodes" to find it.
 
-## 
+## CNI plugin
+Can be checked by `find /etc/cni/net.d/`
+
+## Resource count
+Remember the `wc -l` command
+
+## Container info
+On the node, run `crictl ps` can get all running containers (this command should be given in the question, I believe)
+
+You can also search for "crictl" in the Kubernetes doc, to find more commands to use.
+
+## Secret
+When using `k create secret` with the `--from-literal` flag, the values will be automatically encrypted.
+
+(bookmark - Q22)

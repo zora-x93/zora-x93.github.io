@@ -210,6 +210,8 @@ while
 means allow output traffic to either db1 or db2, on either port 1111 or 2222.
 
 ## Etcd snapshot save and restore
+**I should check again the lecture of ETCD.**
+
 `ETCDCTL_API=3 etcdctl snapshot save <.db file path>`
 this command needs certification flags, which can be found in `kube-apiserver` config file.
 

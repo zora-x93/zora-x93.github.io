@@ -160,4 +160,62 @@ You can also search for "crictl" in the Kubernetes doc, to find more commands to
 ## Secret
 When using `k create secret` with the `--from-literal` flag, the values will be automatically encrypted.
 
-(bookmark - Q22)
+## Certification expiration
+The command: `openssl x509 -noout -text -in <crt file>`
+Searching `openssl` in the Kubernetes doc can find this command
+
+`kubeadm` also has a `certs` command to find the expiration date.
+
+## Network Policy
+Directly search for "nework policy" in the Kubernetes doc, examples can be found there.
+
+Notice: The structure should be clear. For example,
+```
+  egress:
+    -                           # first rule
+      to:                           # first condition "to"
+      - podSelector:
+          matchLabels:
+            app: db1
+      ports:                        # second condition "port"
+      - protocol: TCP
+        port: 1111
+    -                           # second rule
+      to:                           # first condition "to"
+      - podSelector:
+          matchLabels:
+            app: db2
+      ports:                        # second condition "port"
+      - protocol: TCP
+        port: 2222
+```
+means allow output traffic to either db1 on port 1111 or db2 on 2222
+while
+```
+  egress:
+    -                           # first rule
+      to:                           # first condition "to"
+      - podSelector:                    # first "to" possibility
+          matchLabels:
+            app: db1
+      - podSelector:                    # second "to" possibility
+          matchLabels:
+            app: db2
+      ports:                        # second condition "ports"
+      - protocol: TCP                   # first "ports" possibility
+        port: 1111
+      - protocol: TCP                   # second "ports" possibility
+        port: 2222
+```
+means allow output traffic to either db1 or db2, on either port 1111 or 2222.
+
+## Etcd snapshot save and restore
+`ETCDCTL_API=3 etcdctl snapshot save <.db file path>`
+this command needs certification flags, which can be found in `kube-apiserver` config file.
+
+Then stop all controlplane components.
+
+and restore:
+`ETCDCTL_API=3 etcdctl snapshot restore <the saved .db file> --data-dir <a data dir will later be used be etcd> <the cert flags>`
+
+Then edit the etcd config file with the correct data directory. And bring back all controlplane components.

@@ -1,7 +1,12 @@
 ---
 layout: post
 title:  "Notes from sample exam"
+tags: en devops
 ---
+
+This is a post with all notes I took after taking the `killer.sh` sample exam.
+
+<!--more-->
 
 # Mistake Journal
 ## Question 8

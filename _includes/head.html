@@ -11,6 +11,9 @@
       {{ site.title }} &middot; {{ site.tagline }}
     {% else %}
       {{ page.title }} &middot; {{ site.title }}
+      {% if site.tags != "" %}
+        {% include collect_tags.html %}
+      {% endif %}
     {% endif %}
   </title>
 

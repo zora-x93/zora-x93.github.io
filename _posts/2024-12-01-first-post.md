@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "First Post"
+tags: zh diary
 ---
 因为这两天陷入了倦怠期，正事不想干，放松又放不踏实，干脆来写点东西。
 

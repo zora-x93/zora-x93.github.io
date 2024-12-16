@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "强迫自己写点什么"
+tags: zh diary
 ---
 这周挺忙，把新房合同签了，同时在准备CKA考试。
 

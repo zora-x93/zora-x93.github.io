@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CKA考后总结
-tag: k8s devops zh
+tags: k8s devops zh
 excerpt_separator: <!--more-->
 ---
 在12月17日，我终于像年初承诺的那样，通过了CKA考试，92分，还算是个不错的成绩，和我自己的预期差不多。

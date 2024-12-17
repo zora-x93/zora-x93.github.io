@@ -3,13 +3,14 @@ layout: post
 title:  "First Post"
 tags: zh diary
 sticky: true
+excerpt_separator: <!--more-->
 ---
 因为这两天陷入了倦怠期，正事不想干，放松又放不踏实，干脆来写点东西。
 
 我这人很丧，如果真的有读者出现，并且很不喜欢我的语气，先在这道个歉。
 
 就写写为什么想开博客吧。
-
+<!--more-->
 几年前我有尝试过写技术博客，当时的工作进入了瓶颈期，每天脑子里都在想着怎么包装自己，怎么证明自己的实力，就冒出了写技术博客的念头。我在Hashnode上写了一篇[AWS SAA-02考试的经验分享](https://renzhixing.hashnode.dev/preparation-tips-for-aws-solutions-architect-associatesaa-exam)，但写完往Linkedin上一发就再也没有打开看过了，因为害怕。工作也换了，彻底成为一个逃兵，成为焦虑的手下败将！这个写作的想法就自然没有继续下去。
 
 从那之后我就不再想把自己包装成一名优秀的技术工，还尝试了很多跟技术没关系的感情抒发，比如画画、弹琴、搞原创故事。水平是拿不出手的，但自己玩得不亦乐乎。

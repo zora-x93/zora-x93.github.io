@@ -2,9 +2,10 @@
 layout: post
 title:  "强迫自己写点什么"
 tags: zh diary
+excerpt_separator: <!--more-->
 ---
 这周挺忙，把新房合同签了，同时在准备CKA考试。
-
+<!--more-->
 ## CKA考试
 我目前感觉考试并不难，就连最难的killer.sh模拟考试，如果没有时间限制我也能拿个不错的分数，所以压力不是很大。
 总结一下接下来一周的准备计划：

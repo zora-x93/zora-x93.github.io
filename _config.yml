@@ -1,26 +1,41 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      rouge
-plugins:
-  - jekyll-paginate
-# Permalinks
-permalink:        pretty
+# Site settings
+title:          Tale
+description:    "Minimal Jekyll theme for storytellers"
+baseurl:        "/tale"
+url:            "https://chesterhow.github.io"
 
-# Setup
-title:            Renzhi Xing
-tagline:          'Renzhi Xing'
-description:      'A blog of Renzhi Xing'
-url:              https://zora-x93.github.io
-baseurl:          ""
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
 
+# Author
 author:
-  name:           'Renzhi Xing'
-  url:            https://zora-x93.github.io
+  name:         Chester How
+  url:          https://chester.how
+  email:        chesterhow@gmail.com
 
-paginate:         5
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
 
-# Custom vars
-version:          1.0.0
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
-github:
-  repo:           https://github.com/zora-x93/zora-x93.github.io
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
+
+# Disqus (Set to your disqus id)
+disqus:         jekyll-tale

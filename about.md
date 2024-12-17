@@ -1,8 +1,0 @@
----
-layout: page
-title: About
----
-
-Hello, I'm Renzhi, a DevOps developer and a wannabe artist. Originally from China and currently living in Stockholm, Sweden.
-
-你好，我是之，一个在瑞典工作的中国人。

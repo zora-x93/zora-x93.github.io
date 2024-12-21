@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Notes from sample exam"
-tags: en devops
+tags: en certificate notes k8s
 ---
 
 This is a post with all notes I took after taking the `killer.sh` sample exam.

@@ -1,7 +1,6 @@
 # Site settings
 title:          Rzhi
 description:    "Renzhi Xing's personal blog."
-baseurl:        "/"
 url:            "https://zorax-93.github.io"
 
 # Google Analytics

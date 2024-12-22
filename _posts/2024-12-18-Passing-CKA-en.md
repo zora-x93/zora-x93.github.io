@@ -3,7 +3,7 @@ layout: post
 title: Reflections After Passing the CKA Exam
 tags: k8s en certificate
 ---
-(Translated by ChatGPT, from the [original post](https://rzhi.xyz/2024-12-17/Passing-CKA-zh) ) 
+(Translated by ChatGPT, from the [original post](https://rzhi.xyz/2024-12-17/Passing-CKA-zh)) 
 
 On December 17, I finally fulfilled my resolution from the beginning of the year by passing the CKA exam. With a score of 92, it was a decent result, in line with my expectations.
 

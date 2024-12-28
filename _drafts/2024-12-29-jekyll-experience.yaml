@@ -1,0 +1,13 @@
+I've been using Jekyll for this blog so far, and it's time to conclude some experience and thoughts around it.
+
+# Reason of choosing Jekyll
+
+# Work around Jekyll
+
+# Future work for the blog
+I will not continue using the current solution, unfortunately. 
+- no easy way to implement comments
+- with GitHub, repo has to be public, which means I can't even save my draft privately with Git; but without GitHub, I don't see the advantage of setting a static website 
+- I want to explore more platforms
+
+Maybe I can still try out GitLab, which doesn't have the restriction of using a public repo. I might try another static website platform called `Hugo`, and a dynamic blog platform `Ghost`.

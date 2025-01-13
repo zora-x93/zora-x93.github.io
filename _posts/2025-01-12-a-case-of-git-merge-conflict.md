@@ -70,6 +70,7 @@ It does the following things in order:
 - finally, it merges the squashed commit into the target branch using a merge commit.
 
 When `git merge --no-ff` simply adding all relevant commits from the source branch into target branch git history, the GitLab "squash no-ff merge" squashes the multiple commits to keep a clean git history on the target branch, and in the meanwhile Git still gets the merge event recorded.
+**Notice: Even if the merge event is recorded, it's mostly for human readability. Git won't know which branch the squashed commit is from. If the source branch remains after the merge, and continue being used for further development work, conflicts will pop up in the next merge, because commits from the first merge are not seen as merged by Git!**
 
 ## Fast-forward only 
 This method keeps a clean commit history without merge commits. It cannot be performed if source branch is not updated, which is to say, if there's conflicts, the source branch has to be rebased on the target branch.
@@ -83,7 +84,7 @@ This method is a combination of the above two: it works exactly like the merge c
 
 (More explanation can be found in [GitLab's documentation](https://docs.gitlab.com/ee/user/project/merge_requests/methods/))
 
-After sorting out, now it's very clear that **the fast-forward merges with squashed commits would cause the diverge of the source branches and target branches, if source branch remains after the merge**. When the source branch is deleted after the merge, usually this method won't cause problem, but in my case, the source branch is a long-living branch, so it's unsuitable to use this merge method.
+After sorting out, now it's very clear that **merges with squashed commits would cause the diverge of the source branches and target branches, if source branch remains after the merge**. When the source branch is deleted after the merge, usually this method won't cause problem, but in my case, the source branch is a long-living branch, so it's unsuitable to use this merge method.
 
 # Assumed Causes
 - The original owner of the project used fast-forward merge strategy, without any merge commit. They have also configured the project to use ff-only merge method by default.
@@ -93,7 +94,9 @@ After sorting out, now it's very clear that **the fast-forward merges with squas
 These causes can explain all the concerning behaviors I previously encountered. Since we used squash merge, the two branches became identical, however with different git commit histories. The history diverge could never be resolved when we kept using the fast-forward squash merge.
 
 # Problem Solving
-Though the root cause was a bit difficult to diagnose, the fix was pretty simple when knowing the reasons behind the diverging commits. I reset the `development` branch history and force pushed it:
+Though the root cause was a bit difficult to diagnose, the fix was pretty simple when knowing the reasons behind the diverging commits. 
+
+First, I reset the `development` branch history and force pushed it:
 ```
 git checkout development
 git reset --hard origin/staging
@@ -110,4 +113,4 @@ git push origin staging
 ```
 This would introduce a merge commit on `staging` for Git to know when the merge happened, so it would also be a solution to the problem of branch diverging.
 
-At the end, I disabled the squash merge option in the project configuration, to prevent the issue from happening again.
+Last but not least, I disabled the squash merge option in the project configuration, to prevent the issue from happening again.
